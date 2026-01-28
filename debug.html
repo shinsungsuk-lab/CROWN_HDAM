@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Debug</title>
+<style>body { font-family: monospace; padding: 20px; }</style>
+</head>
+<body>
+<h1>Debug Info</h1>
+<div id="debug"></div>
+
+<script src="data.js"></script>
+<script src="quiz.js"></script>
+<script src="app.js"></script>
+
+<script>
+setTimeout(() => {
+    let html = '<h2>Training Data Check:</h2>';
+    html += '<p>trainingData defined: ' + (typeof trainingData !== 'undefined') + '</p>';
+    html += '<p>Modules array exists: ' + (trainingData && Array.isArray(trainingData.modules)) + '</p>';
+    html += '<p>Modules count: ' + (trainingData ? trainingData.modules.length : 0) + '</p>';
+    
+    if (trainingData && trainingData.modules) {
+        html += '<h3>First Module:</h3>';
+        html += '<pre>' + JSON.stringify(trainingData.modules[0], null, 2).substring(0, 500) + '</pre>';
+    }
+    
+    html += '<h2>DOM Check:</h2>';
+    const container = document.getElementById('modules-container');
+    html += '<p>modules-container exists: ' + (container !== null) + '</p>';
+    
+    html += '<h2>Functions Check:</h2>';
+    html += '<p>renderModules defined: ' + (typeof renderModules === 'function') + '</p>';
+    html += '<p>createModuleCard defined: ' + (typeof createModuleCard === 'function') + '</p>';
+    
+    document.getElementById('debug').innerHTML = html;
+}, 100);
+</script>
+</body>
+</html>

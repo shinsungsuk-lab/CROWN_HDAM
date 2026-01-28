@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Test</title></head>
+<body>
+<h1>Testing JS Loading</h1>
+<div id="test"></div>
+
+<script src="data.js"></script>
+<script src="quiz.js"></script>
+<script src="app.js"></script>
+
+<script>
+console.log("Scripts loaded successfully!");
+console.log("trainingData exists:", typeof trainingData !== 'undefined');
+console.log("quizData exists:", typeof quizData !== 'undefined');
+console.log("Modules count:", trainingData ? trainingData.modules.length : 'N/A');
+document.getElementById('test').innerHTML = '<p>Data loaded: ' + (typeof trainingData !== 'undefined') + '</p>';
+</script>
+</body>
+</html>
