@@ -2,6 +2,12 @@
 
 A comprehensive, interactive web-based training application for casino Area Managers to learn table games irregularities, critical incident management, and operational procedures.
 
+## 🚀 Live Demo
+
+**Access the training system here:** [https://shinsungsuk-lab.github.io/CROWN_HDAM/](https://shinsungsuk-lab.github.io/CROWN_HDAM/)
+
+No installation required - runs directly in your browser!
+
 ## Features
 
 ### 📚 **6 Learning Modules**
