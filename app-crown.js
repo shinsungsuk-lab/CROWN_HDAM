@@ -99,12 +99,17 @@ function renderModuleSections(sections) {
                 if (item.text) {
                     html += `<p class="text-gray-400 mb-4 leading-relaxed">${item.text}</p>`;
                 }
-                if (item.list) {
+                if (item.points && Array.isArray(item.points)) {
+                    html += `<ul class="list-disc list-inside space-y-2 text-gray-400 ml-4 mb-4">
+                        ${item.points.map(point => `<li>${point}</li>`).join('')}
+                    </ul>`;
+                }
+                if (item.list && Array.isArray(item.list)) {
                     html += `<ul class="list-disc list-inside space-y-2 text-gray-400 ml-4 mb-4">
                         ${item.list.map(li => `<li>${li}</li>`).join('')}
                     </ul>`;
                 }
-                if (item.procedure) {
+                if (item.procedure && Array.isArray(item.procedure)) {
                     html += `<div class="glass-card border-l-4 border-yellow-400 p-6 my-4">
                         ${item.procedure.map(step => `<p class="text-gray-300 mb-2">${step}</p>`).join('')}
                     </div>`;
