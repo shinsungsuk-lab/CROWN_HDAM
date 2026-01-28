@@ -247,6 +247,17 @@ function renderReference() {
     function displayReference(filterText = '') {
         container.innerHTML = '';
         
+        // Check if reference data exists
+        if (!trainingData.reference || !Array.isArray(trainingData.reference)) {
+            container.innerHTML = `
+                <div class="text-center py-20">
+                    <p class="text-2xl text-gray-500">Quick Reference Guide coming soon...</p>
+                    <p class="text-gray-600 mt-4">In the meantime, please refer to the Learning Modules and Critical Scenarios.</p>
+                </div>
+            `;
+            return;
+        }
+        
         trainingData.reference.forEach((category, index) => {
             const items = category.items.filter(item => {
                 if (!filterText) return true;
