@@ -184,10 +184,13 @@ function createScenarioCard(scenario, index) {
             
             <div class="mb-8">
                 <h4 class="text-2xl font-bold text-yellow-400 mb-4 flex items-center">
-                    <span class="mr-3">▶</span> Resolution
+                    <span class="mr-3">▶</span> ${scenario.resolution.title || 'Resolution'}
                 </h4>
+                ${scenario.resolution.intro ? `
+                    <p class="text-gray-400 mb-4 leading-relaxed italic">${scenario.resolution.intro}</p>
+                ` : ''}
                 <div class="glass-card p-6 space-y-4">
-                    ${scenario.resolution.map((step, i) => `
+                    ${scenario.resolution.steps.map((step, i) => `
                         <div class="flex items-start">
                             <span class="gold-text font-bold mr-4 text-lg">${i + 1}.</span>
                             <p class="text-gray-300">${step}</p>
