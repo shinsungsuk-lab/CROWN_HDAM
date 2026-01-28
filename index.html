@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Manager Training System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎰 Area Manager Training System</h1>
+            <p class="subtitle">Table Games Irregularities & Critical Incident Management</p>
+            <div id="progress-indicator" class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <p class="progress-text"><span id="progress-percent">0</span>% Complete</p>
+        </header>
+
+        <nav class="main-nav">
+            <button class="nav-btn active" data-view="home">🏠 Home</button>
+            <button class="nav-btn" data-view="modules">📚 Learning Modules</button>
+            <button class="nav-btn" data-view="scenarios">🎯 Critical Scenarios</button>
+            <button class="nav-btn" data-view="quizzes">✅ Assessments</button>
+            <button class="nav-btn" data-view="reference">📖 Quick Reference</button>
+        </nav>
+
+        <main id="main-content">
+            <!-- Home View -->
+            <section id="home-view" class="view active">
+                <div class="hero">
+                    <h2>Welcome to Area Manager Training</h2>
+                    <p class="lead">Master the critical thinking and decision-making skills required to protect game integrity, mitigate financial risk, and command respect on the gaming floor.</p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="info-card">
+                        <div class="card-icon">📚</div>
+                        <h3>6 Learning Modules</h3>
+                        <p>Comprehensive coverage of table games irregularities and operational procedures</p>
+                        <button class="btn btn-primary" onclick="navigateTo('modules')">Start Learning</button>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-icon">🎯</div>
+                        <h3>4 Critical Scenarios</h3>
+                        <p>Real-world incident simulations with step-by-step resolution procedures</p>
+                        <button class="btn btn-primary" onclick="navigateTo('scenarios')">View Scenarios</button>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-icon">✅</div>
+                        <h3>Assessment Quizzes</h3>
+                        <p>Test your knowledge with scenario-based questions and immediate feedback</p>
+                        <button class="btn btn-primary" onclick="navigateTo('quizzes')">Take Quiz</button>
+                    </div>
+                </div>
+
+                <div class="learning-path">
+                    <h3>Recommended Learning Path</h3>
+                    <ol>
+                        <li><strong>Study Modules 1-6:</strong> Learn foundational procedures and rules</li>
+                        <li><strong>Review Critical Scenarios:</strong> Understand real-world application</li>
+                        <li><strong>Complete Assessments:</strong> Test your knowledge and decision-making</li>
+                        <li><strong>Use Quick Reference:</strong> Keep procedures accessible on the floor</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Modules View -->
+            <section id="modules-view" class="view">
+                <h2>Learning Modules</h2>
+                <div id="modules-container"></div>
+            </section>
+
+            <!-- Scenarios View -->
+            <section id="scenarios-view" class="view">
+                <h2>Critical Incident Scenarios</h2>
+                <div id="scenarios-container"></div>
+            </section>
+
+            <!-- Quizzes View -->
+            <section id="quizzes-view" class="view">
+                <h2>Knowledge Assessments</h2>
+                <div id="quiz-selection">
+                    <div class="quiz-card">
+                        <h3>Module Knowledge Quiz</h3>
+                        <p>Test your understanding of procedures across all 6 modules</p>
+                        <p><strong>20 Questions</strong> | Multiple Choice | 30 minutes</p>
+                        <button class="btn btn-primary" onclick="startQuiz('module')">Start Module Quiz</button>
+                    </div>
+                    <div class="quiz-card">
+                        <h3>Scenario Response Quiz</h3>
+                        <p>Apply your knowledge to critical incident scenarios</p>
+                        <p><strong>15 Questions</strong> | Scenario-Based | 25 minutes</p>
+                        <button class="btn btn-primary" onclick="startQuiz('scenario')">Start Scenario Quiz</button>
+                    </div>
+                    <div class="quiz-card">
+                        <h3>Comprehensive Final Assessment</h3>
+                        <p>Combined assessment covering all content</p>
+                        <p><strong>30 Questions</strong> | Mixed Format | 45 minutes</p>
+                        <button class="btn btn-primary" onclick="startQuiz('final')">Start Final Assessment</button>
+                    </div>
+                </div>
+                <div id="quiz-container" style="display: none;"></div>
+            </section>
+
+            <!-- Reference View -->
+            <section id="reference-view" class="view">
+                <h2>Quick Reference Guide</h2>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search procedures, rules, or keywords...">
+                </div>
+                <div id="reference-container"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Casino Operations Training | Area Manager Development Program</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
